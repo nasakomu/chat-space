@@ -1,1 +1,9 @@
-<サイドバー>
+.Side
+  .Side__user
+    %p.Side__user--name name
+    .Side__user__icons
+      = link_to("#", class: "Side__user__icons--group_create") do
+        = icon('far', 'edit', class: 'Side__user__icons--group_create__btn')
+      = link_to("#", class: "Side__user__icons--edit_account") do
+        = icon('fas', 'cog', class: 'Side__user__icons--edit_account__btn')
+  .Side__group--list
