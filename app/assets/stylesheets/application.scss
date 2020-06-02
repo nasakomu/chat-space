@@ -28,14 +28,15 @@
 .Side{
   height: 100vh;
   width: 300px;
-  padding: 0 20px;
-  background-color: #253141;
+  background-color: #2f3e51;
   &__user{
     height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
+    background-color: #253141;
     &--name{
       height: 20px;
       color: #ffffff;
@@ -54,16 +55,37 @@
         height: 20px;
         color: #ffffff;
         padding-right: 5px;
+        text-decoration: none;
       }
       &--edit_account__btn{
         height: 20px;
         color: #ffffff;
+        text-decoration: none;
       }
     }
   }
   &__group--list{
     height: calc(100vh - 100px);
     width: 100%;
-    background-color: #2f3e51;
+    padding: 0 20px;
+    &__link{
+      text-decoration: none;
+      &__container{
+        width: 100%;
+        margin: 20px 0 40px 0;
+        // background-color: yellow;
+        &--group_name{
+          color: #ffffff;
+          font-weight: bold;
+          font-size: 15px;
+        }
+        &--message{
+          padding-top: 5px;
+          color: #ffffff;
+          font-weight: bold;
+          font-size: 11px;
+        }
+      }
+    }
   }
 }
