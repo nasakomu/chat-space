@@ -18,3 +18,9 @@
       %P.Main__content__name_container--time 2020年6月02日 10時00分
     %p.Main__content__message 仮のメッセージ3    
   .Main__message--form
+    .Main__message--form__message_container
+      %input.Main__message--form__message_container--text{"placeholder": "type a message", "type": "text"}
+      %label.Main__message--form__message_container--image
+        = icon("far", "image")
+        %input.Main__message--form__message_container--image__btn{"type": "file"}
+    %input.Main__message--form__btn{"type": "submit", "value": "Send"}

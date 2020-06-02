@@ -39,7 +39,7 @@
     &__user_name{
       color: #999999;
       font-size: 12px;
-      padding-top: 15px;
+      padding-top: 13px;
     }
   }
   &__content{
@@ -68,6 +68,41 @@
   &__message--form{
     height: 90px;
     background-color: #d2d2d2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    &__message_container{
+      height: 50px;
+      width: calc(100% - 100px);
+      background-color: white;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &--text{
+        height: 100%;
+        width: 100%;
+        padding: 0 45px 0 10px;
+        border: none;
+      }
+      &--image{
+        font-size: 25px;
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        &__btn{
+          display: none;
+        }
+      }
+    }
+    &__btn{
+      height: 50px;
+      width: 100px;
+      margin-left: 15px;
+      border: none;
+      background-color: #38AEF0;
+      color: white;
+    }
   }
 }
 
@@ -122,13 +157,11 @@
         text-decoration: none;
         &--group_name{
           color: #ffffff;
-          font-weight: bold;
           font-size: 15px;
         }
         &--message{
           padding-top: 5px;
           color: #ffffff;
-          font-weight: bold;
           font-size: 11px;
         }
       }
