@@ -45,6 +45,25 @@
   &__content{
     height: calc(100vh - 190px);
     background-color: #fafafa;
+    padding: 35px 40px 0 40px;
+    &__name_container{
+      display: flex;
+      &--name{
+        color: #333333;
+        font-size: 16px;
+        padding-right: 10px;
+        font-weight: bold;
+      }
+      &--time{
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+    &__message{
+      color: #434A54;
+      font-size: 14px;
+      padding: 12px 0 46px 0;
+    }
   }
   &__message--form{
     height: 90px;
