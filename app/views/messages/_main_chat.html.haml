@@ -1,26 +1,30 @@
 .Main
-  .Main__group--info
-    .Main__group--info__container
-      .Main__group--info__container--group_name test
-      = link_to("Edit", "#", class: "Main__group--info__container--edit_btn")
-    %p.Main__group--info__user_name Member: test_member
-  .Main__content
-    .Main__content__name_container
-      %p.Main__content__name_container--name name
-      %P.Main__content__name_container--time 2020年6月02日 10時00分
-    %p.Main__content__message 仮のメッセージ
-    .Main__content__name_container
-      %p.Main__content__name_container--name name
-      %P.Main__content__name_container--time 2020年6月02日 10時00分
-    %p.Main__content__message 仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2仮のメッセージ2
-    .Main__content__name_container
-      %p.Main__content__name_container--name name
-      %P.Main__content__name_container--time 2020年6月02日 10時00分
-    %p.Main__content__message 仮のメッセージ3    
-  .Main__message--form
-    .Main__message--form__message_container
-      %input.Main__message--form__message_container--text{"placeholder": "type a message", "type": "text"}
-      %label.Main__message--form__message_container--image
-        = icon("far", "image")
-        %input.Main__message--form__message_container--image__btn{"type": "file"}
-    %input.Main__message--form__btn{"type": "submit", "value": "Send"}
+  .MainHeader
+    .MainHeader__upperBox
+      .MainHeader__groupName test
+      = link_to("Edit", "#", class: "MainHeader__editBtn")
+    %p.MainHeader__userName Member: test_member
+  .MainChatField
+    .MainChatList
+      .MainChatList__nameField
+        %p.MainChatList__name name
+        %P.MainChatList__timeStamp 2020年6月02日 10時00分
+      %p.MainChatList__message 仮のメッセージ
+    .MainChatList
+      .MainChatList__nameField
+        %p.MainChatList__name name
+        %P.MainChatList__timeStamp 2020年6月02日 10時00分
+      %p.MainChatList__message 複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ
+    .MainChatList
+      .MainChatList__nameField
+        %p.MainChatList__name name
+        %P.MainChatList__timeStamp 2020年6月02日 10時00分
+      %p.MainChatList__message 仮のメッセージ3
+  .MainFooter
+    .MainMessageForm
+      .MainMessageForm__InputBox
+        %input.MainMessageForm__message{"placeholder": "type a message", "type": "text"}
+        %label.MainMessageForm__imageIcon
+          = icon("far", "image")
+          %input.MainMessageForm__imageBtn{"type": "file"}
+      %input.MainMessageForm__SendBtn{"type": "submit", "value": "Send"}

@@ -1,21 +1,19 @@
 .Side
-  .Side__user
-    %p.Side__user--name name
-    .Side__user__icons
-      = link_to("#", class: "Side__user__icons--group_create") do
-        = icon('fas', 'edit', class: 'Side__user__icons--group_create__btn')
-      = link_to("#", class: "Side__user__icons--edit_account") do
-        = icon('fas', 'cog', class: 'Side__user__icons--edit_account__btn')
-  .Side__group--list
-    .Side__group--list__container
-      = link_to("#", class: "Side__group--list__container__link") do
-        %p.Side__group--list__container__link--group_name グループ名1
-        %p.Side__group--list__container__link--message メッセージ1
-    .Side__group--list__container
-      = link_to("#", class: "Side__group--list__container__link") do
-        %p.Side__group--list__container__link--group_name グループ名2
-        %p.Side__group--list__container__link--message メッセージ2メッセージ2メッセージ2メッセージ2メッセージ2メッセージ2メッセージ2メッセージ2メッセージ2メッセージ2メッセージ2メッセージ2メッセージ2
-    .Side__group--list__container
-      = link_to("#", class: "Side__group--list__container__link") do
-        %p.Side__group--list__container__link--group_name グループ名3
-        %p.Side__group--list__container__link--message メッセージ3
+  .SideHeader
+    %p.SideHeader__name name
+    .SideHeader__icons
+      = link_to("#") do
+        = icon('fas', 'edit', class: 'SideHeader__groupBtn')
+      = link_to("#") do
+        = icon('fas', 'cog', class: 'SideHeader__userCogBtn')
+  .SideGroupField
+    .SideGroupList
+      = link_to("#", class: "SideGroupList__linkBox") do
+        %p.SideGroupList__groupName グループ名1
+        %p.SideGroupList__message メッセージ1
+      = link_to("#", class: "SideGroupList__linkBox") do
+        %p.SideGroupList__groupName グループ名2
+        %p.SideGroupList__message 複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ
+      = link_to("#", class: "SideGroupList__linkBox") do
+        %p.SideGroupList__groupName グループ名3
+        %p.SideGroupList__message メッセージ3

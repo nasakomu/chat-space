@@ -3,7 +3,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-.wrapper{
+.Wrapper{
   display: flex;
 }
 
@@ -11,53 +11,55 @@
   height: 100vh;
   width: calc(100vw - 300px);
   background-color: #ffffff;
-  &__group--info{
+  &Header{
     height: 100px;
     border-bottom: 1px solid #eeeeee;
     padding: 0 40px;
-    &__container{
+    &__upperBox{
       display: flex;
       justify-content: space-between;
-      &--group_name{
-        color: #333333;
-        font-size: 20px;
-        padding-top: 35px;
-      }
-      &--edit_btn{
-        display: block;
-        width: 72px;
-        height: 40px;
-        text-decoration: none;
-        color: #38aef0;
-        font-size: 16px;
-        border: 1px solid #38aef0;
-        margin-top: 28px;
-        padding: 0 20px;
-        line-height: 40px;
-      }
     }
-    &__user_name{
+    &__groupName{
+      color: #333333;
+      font-size: 20px;
+      padding-top: 35px;
+    }
+    &__editBtn{
+      display: block;
+      width: 72px;
+      height: 40px;
+      text-decoration: none;
+      color: #38aef0;
+      font-size: 16px;
+      border: 1px solid #38aef0;
+      margin-top: 28px;
+      padding: 0 20px;
+      line-height: 40px;
+    }
+    &__userName{
       color: #999999;
       font-size: 12px;
       padding-top: 13px;
     }
   }
-  &__content{
+  &ChatField{
     height: calc(100vh - 190px);
     background-color: #fafafa;
     padding: 35px 40px 0 40px;
-    &__name_container{
+  }
+  &ChatList{
+    &__nameField{
       display: flex;
-      &--name{
-        color: #333333;
-        font-size: 16px;
-        padding-right: 10px;
-        font-weight: bold;
-      }
-      &--time{
-        color: #999999;
-        font-size: 12px;
-      }
+    }
+    &__name{
+      color: #333333;
+      font-size: 16px;
+      padding-right: 10px;
+      font-weight: bold;
+    }
+    &__timeStamp{
+      color: #999999;
+      font-size: 12px;
     }
     &__message{
       color: #434A54;
@@ -65,37 +67,41 @@
       padding: 12px 0 46px 0;
     }
   }
-  &__message--form{
+  &Footer{
     height: 90px;
     background-color: #d2d2d2;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    &__message_container{
+  }
+  &MessageForm{
+    display: flex;
+    width: 100%;
+    &__InputBox{
       height: 50px;
       width: calc(100% - 100px);
       background-color: white;
       display: flex;
       align-items: center;
       position: relative;
-      &--text{
-        height: 100%;
-        width: 100%;
-        padding: 0 45px 0 10px;
-        border: none;
-      }
-      &--image{
-        font-size: 25px;
-        position: absolute;
-        top: 7px;
-        right: 10px;
-        &__btn{
-          display: none;
-        }
-      }
     }
-    &__btn{
+    &__message{
+      height: 100%;
+      width: 100%;
+      padding: 0 45px 0 10px;
+      border: none;
+    }
+    &__imageIcon{
+      font-size: 25px;
+      position: absolute;
+      top: 7px;
+      right: 10px;
+    }
+    &__imageBtn{
+      display: none;
+    }
+    &__SendBtn{
       height: 50px;
       width: 100px;
       margin-left: 15px;
@@ -110,7 +116,7 @@
   height: 100vh;
   width: 300px;
   background-color: #2f3e51;
-  &__user{
+  &Header{
     height: 100px;
     width: 100%;
     display: flex;
@@ -118,7 +124,7 @@
     justify-content: space-between;
     padding: 0 20px;
     background-color: #253141;
-    &--name{
+    &__name{
       height: 20px;
       color: #ffffff;
       font-size: 16px;
@@ -132,39 +138,39 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      &--group_create__btn{
-        height: 20px;
-        color: #ffffff;
-        padding-right: 5px;
-        text-decoration: none;
-      }
-      &--edit_account__btn{
-        height: 20px;
-        color: #ffffff;
-        text-decoration: none;
-      }
+    }
+    &__groupBtn{
+      height: 20px;
+      color: #ffffff;
+      padding-right: 5px;
+      text-decoration: none;
+    }
+    &__userCogBtn{
+      height: 20px;
+      color: #ffffff;
+      text-decoration: none;
     }
   }
-  &__group--list{
+  &GroupField{
     height: calc(100vh - 100px);
     width: 100%;
     padding: 0 20px;
-    &__container{
-      width: 100%;
-      padding: 20px 0 40px 0;
-      // background-color: yellow;
-      &__link{
-        text-decoration: none;
-        &--group_name{
-          color: #ffffff;
-          font-size: 15px;
-        }
-        &--message{
-          padding-top: 5px;
-          color: #ffffff;
-          font-size: 11px;
-        }
-      }
+  }
+  &GroupList{
+    width: 100%;
+    // background-color: yellow;
+    &__linkBox{
+      text-decoration: none;
+    }
+    &__groupName{
+      color: #ffffff;
+      font-size: 15px;
+      padding-top: 20px;
+    }
+    &__message{
+      padding: 5px 0 40px 0;
+      color: #ffffff;
+      font-size: 11px;
     }
   }
 }
