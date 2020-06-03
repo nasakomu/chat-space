@@ -1,0 +1,30 @@
+.Main
+  .MainHeader
+    .MainHeader__upperBox
+      .MainHeader__groupName test
+      = link_to("Edit", "#", class: "MainHeader__editBtn")
+    %p.MainHeader__userName Member: test_member
+  .MainChatField
+    .MainChatList
+      .MainChatList__nameField
+        %p.MainChatList__name name
+        %P.MainChatList__timeStamp 2020年6月02日 10時00分
+      %p.MainChatList__message 仮のメッセージ
+    .MainChatList
+      .MainChatList__nameField
+        %p.MainChatList__name name
+        %P.MainChatList__timeStamp 2020年6月02日 10時00分
+      %p.MainChatList__message 複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ
+    .MainChatList
+      .MainChatList__nameField
+        %p.MainChatList__name name
+        %P.MainChatList__timeStamp 2020年6月02日 10時00分
+      %p.MainChatList__message 仮のメッセージ3
+  .MainFooter
+    .MainMessageForm
+      .MainMessageForm__InputBox
+        %input.MainMessageForm__message{"placeholder": "type a message", "type": "text"}
+        %label.MainMessageForm__imageIcon
+          = icon("far", "image")
+          %input.MainMessageForm__imageBtn{"type": "file"}
+      %input.MainMessageForm__SendBtn{"type": "submit", "value": "Send"}
