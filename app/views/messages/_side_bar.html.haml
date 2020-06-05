@@ -3,7 +3,7 @@
     %p.SideHeader__name 
       = current_user.name
     .SideHeader__icons
-      = link_to("#") do
+      = link_to(groups_new_path) do
         = icon('fas', 'edit', class: 'SideHeader__groupBtn')
       = link_to edit_user_path(current_user) do
         = icon('fas', 'cog', class: 'SideHeader__userCogBtn')
