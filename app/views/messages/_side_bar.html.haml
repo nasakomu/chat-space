@@ -9,12 +9,8 @@
         = icon('fas', 'cog', class: 'SideHeader__userCogBtn')
   .SideGroupField
     .SideGroupList
-      = link_to("#", class: "SideGroupList__linkBox") do
-        %p.SideGroupList__groupName グループ名1
-        %p.SideGroupList__message メッセージ1
-      = link_to("#", class: "SideGroupList__linkBox") do
-        %p.SideGroupList__groupName グループ名2
-        %p.SideGroupList__message 複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ複数行のメッセージ
-      = link_to("#", class: "SideGroupList__linkBox") do
-        %p.SideGroupList__groupName グループ名3
-        %p.SideGroupList__message メッセージ3
+      - current_user.groups.each do |group|
+        = link_to("#", class: "SideGroupList__linkBox") do
+          %p.SideGroupList__groupName 
+            = group.name
+          %p.SideGroupList__message メッセージはまだありません
