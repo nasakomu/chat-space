@@ -3,7 +3,11 @@ class MessagesController < ApplicationController
   end
 
   def create
-    Message.create(message_params)
+    if Message.create(message_params)
+      redirect_to message_path
+    else
+      render :index
+    end
   end
 
   private
