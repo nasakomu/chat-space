@@ -1,9 +1,13 @@
 .Main
   .MainHeader
     .MainHeader__upperBox
-      .MainHeader__groupName test
-      = link_to("Edit", "#", class: "MainHeader__editBtn")
-    %p.MainHeader__userName Member: test_member
+      .MainHeader__groupName
+        = @group.name
+      = link_to "Edit", edit_group_path(@group), class: "MainHeader__editBtn"
+    %p.MainHeader__userName
+      Member : 
+      - @users.each do |user|
+        = user.name
   .MainChatField
     = render @messages
   .MainFooter
