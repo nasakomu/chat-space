@@ -10,7 +10,11 @@
   .SideGroupField
     .SideGroupList
       - current_user.groups.each do |group|
-        = link_to("#", class: "SideGroupList__linkBox") do
+        = link_to group_messages_path(group), class: "SideGroupList__linkBox" do
           %p.SideGroupList__groupName 
             = group.name
-          %p.SideGroupList__message メッセージはまだありません
+          %p.SideGroupList__message
+            - if group.messages != []
+              = group.messages.order(updated_at: :desc).limit(1)[0][:content]
+            - else
+              メッセージはまだありません

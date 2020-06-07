@@ -67,6 +67,7 @@
     background-color: #fafafa;
     padding-top: 35px;
     @include side_padding;
+    overflow: scroll;
   }
   &ChatList{
     &__nameField{
@@ -82,10 +83,15 @@
       color: #999999;
       font-size: 12px;
     }
+    &__messageBox{
+      padding: 12px 0 46px 0;
+    }
     &__message{
       color: #434A54;
       font-size: 14px;
-      padding: 12px 0 46px 0;
+    }
+    &__image{
+      display: block;
     }
   }
   &Footer{

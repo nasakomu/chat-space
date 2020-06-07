@@ -5,21 +5,7 @@
       = link_to("Edit", "#", class: "MainHeader__editBtn")
     %p.MainHeader__userName Member: test_member
   .MainChatField
-    .MainChatList
-      .MainChatList__nameField
-        %p.MainChatList__name name
-        %P.MainChatList__timeStamp 2020年6月02日 10時00分
-      %p.MainChatList__message 仮のメッセージ
-    .MainChatList
-      .MainChatList__nameField
-        %p.MainChatList__name name
-        %P.MainChatList__timeStamp 2020年6月02日 10時00分
-      %p.MainChatList__message 複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ
-    .MainChatList
-      .MainChatList__nameField
-        %p.MainChatList__name name
-        %P.MainChatList__timeStamp 2020年6月02日 10時00分
-      %p.MainChatList__message 仮のメッセージ3
+    = render "message"
   .MainFooter
     = form_with model: [@group, @message], local: true, class: "MainMessageForm" do |f|
       .MainMessageForm__InputBox
