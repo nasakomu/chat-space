@@ -6,7 +6,7 @@
       = link_to "Edit", edit_group_path(@group), class: "MainHeader__editBtn"
     %p.MainHeader__userName
       Member : 
-      - @users.each do |user|
+      - @group.users.each do |user|
         = user.name
   .MainChatField
     = render @messages
