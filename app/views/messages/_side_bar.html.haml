@@ -14,7 +14,4 @@
           %p.SideGroupList__groupName 
             = group.name
           %p.SideGroupList__message
-            - if group.messages != []
-              = group.messages.order(updated_at: :desc).limit(1)[0][:content]
-            - else
-              まだメッセージはありません。
+            = group.show_last_message 
