@@ -1,30 +1,20 @@
 .Main
   .MainHeader
     .MainHeader__upperBox
-      .MainHeader__groupName test
-      = link_to("Edit", "#", class: "MainHeader__editBtn")
-    %p.MainHeader__userName Member: test_member
+      .MainHeader__groupName
+        = @group.name
+      = link_to "Edit", edit_group_path(@group), class: "MainHeader__editBtn"
+    %p.MainHeader__userName
+      Member : 
+      - @group.users.each do |user|
+        = user.name
   .MainChatField
-    .MainChatList
-      .MainChatList__nameField
-        %p.MainChatList__name name
-        %P.MainChatList__timeStamp 2020年6月02日 10時00分
-      %p.MainChatList__message 仮のメッセージ
-    .MainChatList
-      .MainChatList__nameField
-        %p.MainChatList__name name
-        %P.MainChatList__timeStamp 2020年6月02日 10時00分
-      %p.MainChatList__message 複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ複数行の仮のメッセージ
-    .MainChatList
-      .MainChatList__nameField
-        %p.MainChatList__name name
-        %P.MainChatList__timeStamp 2020年6月02日 10時00分
-      %p.MainChatList__message 仮のメッセージ3
+    = render @messages
   .MainFooter
-    .MainMessageForm
+    = form_with model: [@group, @message], local: true, class: "MainMessageForm" do |f|
       .MainMessageForm__InputBox
-        %input.MainMessageForm__message{"placeholder": "type a message", "type": "text"}
-        %label.MainMessageForm__imageIcon
+        = f.text_field :content, placeholder: "type a message", class: "MainMessageForm__message"
+        = f.label :image, class: "MainMessageForm__imageIcon" do
           = icon("far", "image")
-          %input.MainMessageForm__imageBtn{"type": "file"}
-      %input.MainMessageForm__SendBtn{"type": "submit", "value": "Send"}
+          = f.file_field :image, class: "MainMessageForm__imageBtn"
+      = f.submit "Send", class: "MainMessageForm__SendBtn"
