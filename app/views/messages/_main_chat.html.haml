@@ -5,7 +5,7 @@
       = link_to("Edit", "#", class: "MainHeader__editBtn")
     %p.MainHeader__userName Member: test_member
   .MainChatField
-    = render "message"
+    = render @messages
   .MainFooter
     = form_with model: [@group, @message], local: true, class: "MainMessageForm" do |f|
       .MainMessageForm__InputBox
