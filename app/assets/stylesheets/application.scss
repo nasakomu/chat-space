@@ -168,16 +168,16 @@
   }
   &GroupList{
     width: 100%;
+    padding: 20px 0 40px 0;
     &__linkBox{
       text-decoration: none;
     }
     &__groupName{
       color: $BaseWhite;
       font-size: 15px;
-      padding-top: 20px;
     }
     &__message{
-      padding: 5px 0 40px 0;
+      margin-top: 5px;
       color: $BaseWhite;
       font-size: 11px;
     }
