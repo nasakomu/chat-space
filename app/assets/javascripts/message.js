@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    if (message.image) {
+    if (message.image_url) {
       let html = `<div class="MainChatList">
                     <div class="MainChatList__nameField">
                       <p class="MainChatList__name">${message.user_name}</p>
@@ -40,7 +40,14 @@ $(function(){
    })
    .done(function(message){
      let html = buildHTML(message);
-     console.log(html);
+     $(".MainChatField").append(html);
+     $(".MainMessageForm")[0].reset();
+     $(".MainChatField").animate({ scrollTop: $(".MainChatField")[0].scrollHeight});
+     $(".MainMessageForm__SendBtn").attr("disabled", false);
    })
+   .fail(function() {
+     alert("メッセージ送信に失敗しました");
+     $(".MainMessageForm__SendBtn").attr("disabled", false);
+   });
  });
 });
