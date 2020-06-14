@@ -14,6 +14,16 @@ $(function(){
     }
   }
 
+  function addGroupUser(data) {
+    let html = `<div class="ChatMember">
+                  <p class="ChatMember__name">${data['userName']}</p>
+                  <input name="group[user_ids][]" type="hidden" value="${data['userId']}" />
+                  <div class="ChatMember__remove ChatMember__button">削除</div>
+                </div>`;
+    $(".ChatMembers").append(html);
+  }
+
+  // チャットメンバー追加のインクリメンタルサーチ
   $("#UserSearch__field").on("keyup", function() {
     let input = $(this).val();
     $.ajax({
@@ -39,7 +49,16 @@ $(function(){
     .fail(function() {
       alert("通信エラーです。ユーザーが表示できません。");
     })
+  });
 
-    
+  // ユーザー検索の結果から選択したユーザーをチャットメンバーに追加する
+  $("#UserSearchResult").on("click", ".ChatMember__add", function(){
+    const data = $(this).data();
+    $(this).parent().remove();
+    addGroupUser(data);
+  });
+  // 削除ボタンを押すと、チャットメンバーが削除される
+  $(".ChatMembers").on("click", ".ChatMember__remove", function(){
+    $(this).parent().remove();
   });
 });
