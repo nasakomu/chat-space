@@ -43,10 +43,11 @@ $(function(){
      $(".MainChatField").append(html);
      $(".MainMessageForm")[0].reset();
      $(".MainChatField").animate({ scrollTop: $(".MainChatField")[0].scrollHeight});
-     $(".MainMessageForm__SendBtn").attr("disabled", false);
    })
    .fail(function() {
      alert("メッセージ送信に失敗しました");
+   })
+   .always(function() {
      $(".MainMessageForm__SendBtn").attr("disabled", false);
    });
  });
