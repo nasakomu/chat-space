@@ -43,15 +43,12 @@ describe MessagesController do
       context 'can save' do
         subject {
           post :create,
-          params: params
+          params: params,
+          format: :json
         }
 
         it 'count up message' do
           expect{ subject }.to change(Message, :count).from(0).to(1)
-        end
-        it 'redirect to index' do
-          subject
-          expect(response).to redirect_to group_messages_path(group)
         end
       end
 
