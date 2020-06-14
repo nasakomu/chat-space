@@ -3,7 +3,7 @@
     %p.MainChatList__name
       = message.user.name 
     %P.MainChatList__timeStamp
-      = message.created_at.to_s.gsub(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}).+/,'\1年\2月\3日 \4時\5分')
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .MainChatList__messageBox
     - if message.content.present?
       %p.MainChatList__message
