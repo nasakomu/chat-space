@@ -1,7 +1,8 @@
 $(function(){
+
   function buildHTML(message){
     if (message.image_url) {
-      let html = `<div class="MainChatList">
+      let html = `<div class="MainChatList" data-message-id=${message.id}>
                     <div class="MainChatList__nameField">
                       <p class="MainChatList__name">${message.user_name}</p>
                       <p class="MainChatList__timeStamp">${message.created_at}</p>
@@ -13,7 +14,7 @@ $(function(){
                   </div>`
       return html;
     } else {
-      let html = `<div class="MainChatList">
+      let html = `<div class="MainChatList" data-message-id=${message.id}>
                     <div class="MainChatList__nameField">
                       <p class="MainChatList__name">${message.user_name}</p>
                       <p class="MainChatList__timeStamp">${message.created_at}</p>
@@ -26,6 +27,7 @@ $(function(){
     }
   }
 
+// メッセージ投稿時の非同期通信による更新
  $('.MainMessageForm').on('submit',function(e){
    e.preventDefault();
    let formData = new FormData(this);
