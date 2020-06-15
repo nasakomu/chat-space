@@ -165,6 +165,7 @@
   &GroupField{
     @include h_w(calc(100vh - 100px), 100%);
     padding: 0 20px;
+    overflow: scroll;
   }
   &GroupList{
     width: 100%;
