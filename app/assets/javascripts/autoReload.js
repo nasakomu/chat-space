@@ -41,7 +41,7 @@ $(function(){
       $.each(messages, function(i, message) {
         insertHTML += buildHTML(message)
       });
-      $(".MainChatField").appent(insertHTML);
+      $(".MainChatField").append(insertHTML);
       $(".MainChatField").animate({ scrollTop: $(".MainChatField")[0].scrollHeight});
     }
   })
