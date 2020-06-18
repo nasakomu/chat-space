@@ -26,10 +26,13 @@ $(function(){
   // チャットメンバー追加のインクリメンタルサーチ
   $("#UserSearch__field").on("keyup", function() {
     let input = $(this).val();
+    let added_user_ids = $(".ChatMember input").map(function(){
+      return $(this).val();
+    }).get();
     $.ajax({
       type: "GET",
       url: "/users",
-      data: { keyword: input },
+      data: { keyword: input, user_ids: added_user_ids},
       dataType: "json"
     })
     .done(function(users){
